@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="Igor Sadovyi, Senior QA Engineer in Poland. Explore engineering cases on service integrations, data integrity, API authorization and GenAI evaluation.">
+  <meta property="og:title" content="Igor Sadovyi · Senior QA Engineer">
+  <meta property="og:description" content="Igor Sadovyi’s professional experience, public automation suites and hands-on learning labs.">
+  <title>Igor Sadovyi · Senior QA Engineer</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container navbar">
+    <a class="wordmark" href="./" aria-label="Igor Sadovyi — home"><span class="monogram" aria-hidden="true">IS</span><span>Igor Sadovyi</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#labs">Labs</a><a href="#proof">Proof</a>
+      <a class="contact-nav" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div></header>
+
+  <main id="main">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p class="eyebrow"><span class="role-line" aria-hidden="true"></span> Senior QA Engineer</p>
+            <h1 id="intro-title">Full-stack QA, <em>from design to release.</em></h1>
+            <p class="intro-lede">I’m Igor Sadovyi, a Senior QA Engineer. I work with product and engineering to spot risks before development starts. I write API and Playwright tests, trace failures across services, and check AI-generated results against their source.</p>
+            <div class="actions"><a class="button" href="#projects">My projects <span aria-hidden="true">↓</span></a><a class="button secondary" href="https://www.linkedin.com/in/igorsadovyi/">LinkedIn <span aria-hidden="true">↗</span></a></div>
+          </div>
+          <figure class="signal-figure">
+            <div class="figure-meta"><span>Field notes</span><span>Fig. 01</span></div>
+            <img src="./assets/signal-path.svg" alt="" width="620" height="380">
+            <figcaption><span>Request</span><i aria-hidden="true"></i><span>Service</span><i aria-hidden="true"></i><span>Stored record</span></figcaption>
+          </figure>
+        </div>
+        <dl class="profile-facts">
+          <div><dt>Experience</dt><dd><b>12</b> years in software quality</dd></div>
+          <div><dt>Based in</dt><dd>Poland</dd></div>
+          <div><dt>Practice</dt><dd>API integration · Platform quality · GenAI</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="experience" class="experience-band" aria-labelledby="experience-title">
+      <div class="chapter container">
+        <div class="section-intro">
+          <div><p class="eyebrow">01 / Field notes</p><h2 id="experience-title">Professional Experience</h2></div>
+          <p>On an enterprise knowledge platform, I worked across integrations, product data and regional AWS rollouts. <a class="text-link" href="https://github.com/i5adovyi/i5adovyi/blob/4b219522387d248d7bf6a20ca54f4336b1a905b6/README.md#engineering-work">Read my engineering notes <span aria-hidden="true">↗</span></a></p>
+        </div>
+        <div class="experience-grid">
+          <!-- preview:sync -->
+          <article class="experience-card">
+            <p class="eyebrow">AI evaluation</p>
+            <h3>The missing ingredient list</h3>
+            <p>The system read the ingredients on a package, then saved the product without them. It could still approve the item. I traced where the text disappeared and helped make the source of each extracted value visible to reviewers.</p>
+            <a class="text-link" href="./experience/genai-product-labels/">Read the GenAI case <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="experience-card">
+            <p class="eyebrow">Integration design</p>
+            <h3>Which SharePoint fields had to survive the migration?</h3>
+            <p>Before the planned move to Microsoft Graph, I mapped how the product used each SharePoint field. That gave us a clear expectation for a full resync: which values had to survive and which fields we could safely ignore.</p>
+          </article>
+          <article class="experience-card">
+            <p class="eyebrow">API automation</p>
+            <h3>What did the API actually save?</h3>
+            <p>I wrote TypeScript tests that followed an import from the API request through background processing to storage. Once the job finished, the tests read the records back and checked that the expected data was there.</p>
+          </article>
+          <article class="experience-card">
+            <p class="eyebrow">Test tooling</p>
+            <h3>Reproducing a provider failure on demand</h3>
+            <p>Some failures were hard to reproduce against a live provider. I built a mock connector to control the responses and a webhook recorder to capture incoming events, so I could repeat the scenario and inspect what happened.</p>
+          </article>
+          <!-- preview:recovery -->
+          <article class="experience-card">
+            <p class="eyebrow">Release readiness</p>
+            <h3>Was the new AWS region ready for release?</h3>
+            <p>During a regional AWS rollout, I coordinated checks for workflows that crossed several services. I tracked blockers with the engineers fixing them and reported which workflows we had verified and which still needed work.</p>
+          </article>
+          <article class="experience-card">
+            <p class="eyebrow">Service monitoring</p>
+            <h3>Who gets the alert when a service fails?</h3>
+            <p>I audited services for gaps in availability monitoring, then wrote Terraform to add the missing objectives and route alerts to the teams responsible for each service.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="chapter container" aria-labelledby="projects-title">
+      <div class="section-intro">
+        <div><p class="eyebrow">02 / Independent work</p><h2 id="projects-title">Test Automation Projects</h2></div>
+        <p>I use Playwright to check API behavior and test what shoppers see in their carts.</p>
+      </div>
+      <div class="work-shelf">
+        <article class="lead-case">
+          <div class="featured-top"><p class="eyebrow">Conduit API</p><span class="tag">API testing</span></div>
+          <h3>Did the article survive a rejected delete?</h3>
+          <p>I built a Playwright suite for Conduit’s publishing API. One test tries to delete an article with an invalid token, checks for a 401 response, then fetches the same article to verify it still exists.</p>
+          <div class="order-sequence" aria-hidden="true"><span><b>DELETE</b>401</span><i>→</i><span><b>GET</b>200</span></div>
+          <div class="case-actions">
+            <a class="text-link" href="./work/conduit/">Read the API case <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://github.com/i5adovyi/qa-dojo-conduit-api-ta/blob/378f676a763f32da223b1d1f01122d8aefcd7490/tests/api/article/delete-article.spec.ts#L18-L31">View the API test <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="lead-case">
+          <div class="featured-top"><p class="eyebrow">Coffee Cart</p><span class="tag">Browser testing</span></div>
+          <h3>Does cancelling a second mocha change the total?</h3>
+          <p>I wrote five Playwright tests for cart totals, promotions and checkout. One adds an $8 mocha, cancels a second addition and checks that the total stays at $8.</p>
+          <div class="order-sequence" aria-hidden="true"><span><b>Confirm</b>$8</span><i>→</i><span><b>Cancel</b>$8</span></div>
+          <div class="case-actions">
+            <a class="text-link" href="https://github.com/i5adovyi/coffee-cart-playwright/blob/99f8c52b6ef824f89a2a1c4dc01f721940648fe6/coffee-shop-tests/order-coffe.spec.ts#L74-L84">View the cart test <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/i5adovyi/coffee-cart-playwright/blob/main/README.md">Run the suite <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <!-- preview:projects -->
+      </div>
+    </section>
+
+    <section id="labs" class="chapter container" aria-labelledby="labs-title">
+      <div class="section-intro">
+        <div><p class="eyebrow">03 / Hands-on practice</p><h2 id="labs-title">Learning Labs</h2></div>
+        <p>Open a lab on GitHub Pages to follow a lesson, try an exercise and compare the result with what you expected.</p>
+      </div>
+      <div class="lab-list">
+        <article>
+          <span class="lab-mark" aria-hidden="true">[A]</span>
+          <div>
+            <p class="eyebrow">Forge Playwright Academy</p>
+            <h3>Learn Playwright with a shop you can break</h3>
+            <p>I built a Playwright workshop around a shop and its API. In one exercise, the shop saves an order but drops the confirmation. You retry the purchase and check that only one order was stored.</p>
+          </div>
+          <div class="lab-actions">
+            <a href="https://i5adovyi.github.io/forge-playwright-academy/">Forge on GitHub Pages <span aria-hidden="true">↗</span></a>
+            <a href="./work/forge/">Read the recovery case <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/i5adovyi/forge-playwright-academy/blob/e29b7710b85b95d3681d2f74bfbb104f15cc41e1/workplace/recovery/worked.spec.ts#L5-L43">Recovery exercise <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article>
+          <span class="lab-mark" aria-hidden="true">[B]</span>
+          <div>
+            <p class="eyebrow">AI for SDET</p>
+            <h3>When should a support agent hand off a ticket?</h3>
+            <p>I built a course on evaluating AI systems. In Signal Desk, an offline lab, you give a rules-based agent a fictional support ticket and check whether it drafts a reply from the handbook or flags the request for review.</p>
+          </div>
+          <div class="lab-actions">
+            <a href="https://i5adovyi.github.io/is-qa-ai-edu/#start">AI for SDET on GitHub Pages <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/i5adovyi/is-qa-ai-edu/blob/35af67d4682fe1bd1255984eb2c42f1467c83791/lab/README.md">Signal Desk lab guide <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article>
+          <span class="lab-mark" aria-hidden="true">[C]</span>
+          <div>
+            <p class="eyebrow">Mobile Automation Lab</p>
+            <h3>Run an Appium test on Android</h3>
+            <p>Read a lesson in the browser, then use Appium, TypeScript and WebdriverIO to test a native demo app. The exercises guide you through running the test locally and investigating a failure.</p>
+          </div>
+          <div class="lab-actions">
+            <a href="https://i5adovyi.github.io/is-qa-appium/">Mobile Lab on GitHub Pages <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article>
+          <span class="lab-mark" aria-hidden="true">[D]</span>
+          <div>
+            <p class="eyebrow">JavaScript Fieldwork</p>
+            <h3>Predict the output, then run the code</h3>
+            <p>Work through a JavaScript example in the browser. Predict what it will do, edit the code and run it again to see whether your explanation holds.</p>
+          </div>
+          <div class="lab-actions">
+            <a href="https://i5adovyi.github.io/javascript-fieldwork/">Fieldwork on GitHub Pages <span aria-hidden="true">↗</span></a>
+            <a href="https://i5adovyi.github.io/javascript-fieldwork/#/lesson/lesson-01">Try the first lesson <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="proof" class="chapter container" aria-labelledby="proof-title">
+      <div class="section-intro">
+        <div><p class="eyebrow">04 / Results and evidence</p><h2 id="proof-title">Proof</h2></div>
+      </div>
+      <div class="work-shelf">
+        <article class="lead-case">
+          <p class="eyebrow">Professional result</p>
+          <h3>Recovering more barcodes on test images</h3>
+          <p>I added a fallback that recovered more barcodes on our test photos without another model call. I measured both the recovery rate and the extra time the fallback took.</p>
+          <div class="actions">
+            <a class="text-link" href="https://github.com/i5adovyi/i5adovyi/blob/4b219522387d248d7bf6a20ca54f4336b1a905b6/README.md#ai-quality-and-product-engineering">Read the engineering notes <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/i5adovyi/i5adovyi/blob/main/README.md">My engineering profile <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="lead-case">
+          <p class="eyebrow">Independent product</p>
+          <h3>Career Starter</h3>
+          <p>Career Starter stops an export if the CV has changed since approval. In the browser demo you can save a fictional draft, reload the page and check what survived.</p>
+          <div class="actions">
+            <a class="button" href="./career-starter/">Try the demo <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="./work/career-starter/">Read the export case <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="./evidence/">Playwright test, report and trace <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach" class="chapter container" aria-labelledby="approach-title">
+      <div class="section-intro">
+        <div><p class="eyebrow">05 / From design to release</p><h2 id="approach-title">How I Work</h2></div>
+        <p>Take one integration decision. After a full resync, can a user still find the right version of a document?</p>
+      </div>
+      <ol class="process-list">
+        <li><h3>Define the expectation</h3><p>I work with product and engineering to agree which fields must survive and who should have access.</p></li>
+        <li><h3>Choose the check</h3><p>I automate the repeatable API path and explore the cases where a change in permissions or filters could affect the result.</p></li>
+        <li><h3>Read it back</h3><p>I wait for processing to finish, then compare the stored record and the document the user can retrieve with what we expected.</p></li>
+        <li><h3>Decide what can ship</h3><p>I report which paths we verified, what failed and what still needs checking before I can recommend release.</p></li>
+      </ol>
+    </section>
+
+    <section id="applied-ai" class="ai-band" aria-labelledby="ai-title">
+      <div class="chapter container ai-layout">
+        <div class="ai-copy">
+          <p class="eyebrow">06 / Evaluation method</p><h2 id="ai-title">Applied AI</h2>
+          <p>For product labels, I checked two things separately. Did processing finish? Did the saved product match the original photo?</p>
+          <p>One package had a readable ingredient list. The system extracted it, lost it before saving and still allowed approval. I followed the text between stages and helped reviewers see the source behind a field.</p>
+          <a class="text-link" href="./experience/genai-product-labels/">Follow the ingredient trace <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="ai-trace">
+          <div class="figure-meta"><span>Packaging data</span><span>Fig. 02</span></div>
+          <img src="./assets/ingredient-trace.svg" alt="" width="600" height="204">
+          <figcaption><span>Package photo</span><span>Extracted text</span><span>Empty field</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="stack" class="chapter container" aria-labelledby="stack-title">
+      <div class="section-intro">
+        <div><p class="eyebrow">07 / Tools in practice</p><h2 id="stack-title">Stack</h2></div>
+      </div>
+      <dl class="stack-list">
+        <div><dt>Test automation</dt><dd><strong>TypeScript · JavaScript · Node.js · Playwright · Vitest</strong><p>I write TypeScript suites for service integrations and use Playwright to test APIs and browser journeys.</p></dd></div>
+        <div><dt>Integration testing</dt><dd><strong>REST APIs · SharePoint · Microsoft Graph · Confluence</strong><p>I follow a document through a sync and check which fields survive and who can retrieve it.</p></dd></div>
+        <!-- preview:cv-stack -->
+        <div><dt>Production diagnostics</dt><dd><strong>AWS API Gateway · Lambda · Datadog · CloudWatch</strong><p>I trace failing requests from the gateway to the function handling them and isolate the service involved.</p></dd></div>
+        <div><dt>Monitoring and delivery</dt><dd><strong>Terraform · SLOs · GitHub Actions</strong><p>I use Terraform to define availability objectives and route alerts. My public Playwright suites use GitHub Actions for test runs and reports.</p></dd></div>
+        <div><dt>AI quality engineering</dt><dd><strong>TypeScript evaluations · Claude Code · Codex</strong><p>I check saved AI output against source images and version the expected answers. I use coding assistants for test design and review.</p></dd></div>
+        <div><dt>Mobile lab practice</dt><dd><strong>Appium · WebdriverIO · TypeScript</strong><p>In my learning lab, I use these tools to exercise an Android demo app. <a href="https://i5adovyi.github.io/is-qa-appium/">Open the mobile lab</a></p></dd></div>
+      </dl>
+    </section>
+
+    <section id="contact" class="contact-band"><div class="container contact-inner"><div><p class="eyebrow">08 / Contact</p><h2>Get in touch</h2><p>I’d be happy to help.</p></div><a class="button" href="https://www.linkedin.com/in/igorsadovyi/">Message me on LinkedIn <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><span>Igor Sadovyi · Senior QA Engineer</span><a href="https://github.com/i5adovyi">GitHub <span aria-hidden="true">↗</span></a></div></footer>
+</body>
+</html>

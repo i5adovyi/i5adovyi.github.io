@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="The server saves an order, then loses the reply. A retry should recover the original order without creating a duplicate.">
+  <title>One purchase, two attempts · Forge Playwright Academy · Igor Sadovyi</title>
+  <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../case.css">
+</head>
+<body class="field-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="wordmark" href="../../" aria-label="Igor Sadovyi — home"><span class="monogram" aria-hidden="true">IS</span><span>Igor Sadovyi</span></a>
+      <nav class="nav-links" aria-label="Portfolio navigation"><a href="../../#labs"><span aria-hidden="true">←</span> Learning Labs</a></nav>
+    </div>
+  </header>
+  <main id="main" class="container field-main">
+    <article aria-labelledby="case-title">
+      <header class="field-cover">
+        <div class="cover-copy">
+          <p class="sheet-index"><span>01</span> Engineering field notes</p>
+          <p class="project-name">Forge Playwright Academy</p>
+          <h1 id="case-title">One purchase, two attempts</h1>
+          <p class="standfirst">The server commits an order for headphones, but the buyer never sees the confirmation. A retry should recover that order without creating a second one.</p>
+          <div class="scope"><span>Independent public lab</span><span>Playwright · TypeScript · API and browser</span></div>
+        </div>
+        <figure class="exhibit">
+          <figcaption><span>01A</span> Request sequence</figcaption>
+          <svg viewBox="0 0 430 206" role="img" aria-labelledby="sequence-title">
+            <title id="sequence-title">The browser submits a purchase. The server commits it before the reply is lost. The browser retries with the same key and receives the original order.</title>
+            <g class="lane"><path d="M53 34v153M377 34v153"/></g>
+            <g class="role"><text x="53" y="23">Browser</text><text x="377" y="23">Server</text></g>
+            <g class="arrow"><path d="M53 65h324m-8-5 8 5-8 5M53 143h324m-8-5 8 5-8 5"/></g>
+            <g class="return"><path d="M377 107H231" stroke-dasharray="4 5"/><path d="m219 102 10 10m0-10-10 10M377 184H53m8-5-8 5 8 5"/></g>
+            <g class="diagram-label"><text x="215" y="57">Submit purchase</text><text x="286" y="97">Reply lost</text><text x="215" y="135">Retry · same key</text><text x="215" y="176">Return REC-001</text></g>
+            <circle class="commit-node" cx="377" cy="65" r="4"/>
+          </svg>
+          <p class="figure-foot"><strong>2</strong> write attempts <span aria-hidden="true">/</span> <strong>1</strong> committed order</p>
+        </figure>
+      </header>
+      <div class="notes">
+        <section class="field-note">
+          <p class="note-label">The risk</p>
+          <div><h2>Uncertainty after checkout</h2><p>A lost confirmation leaves the buyer guessing. The order already exists, but from the browser it looks like checkout may have failed. Generating a new idempotency key on retry could turn one purchase into two orders.</p></div>
+        </section>
+        <section class="field-note">
+          <p class="note-label">The experiment</p>
+          <div><h2>Drop the reply after commit</h2><p>The lab injects the failure after the server saves the order. In the browser test, the original buy button becomes unavailable. The buyer retries the same purchase, and the browser shows the confirmation for order <code>REC-001</code>.</p></div>
+        </section>
+        <section class="field-note">
+          <p class="note-label">The evidence</p>
+          <div><h2>Count orders behind the confirmation</h2><p>The tests inspect the order store and the event journal. The store must contain one order with the expected customer, item, quantity and total. The journal must show two writes with the same key, one commit and one replay.</p></div>
+        </section>
+        <div class="source-line">
+          <span class="note-label">Source file</span>
+          <a href="https://github.com/i5adovyi/forge-playwright-academy/blob/e29b7710b85b95d3681d2f74bfbb104f15cc41e1/workplace/recovery/worked.spec.ts#L5-L43"><span><strong>Read the recovery tests</strong><code>worked.spec.ts</code></span><span class="source-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container"><span>Igor Sadovyi / Senior QA Engineer</span><a href="https://github.com/i5adovyi/forge-playwright-academy">Project repository <span aria-hidden="true">↗</span></a></div></footer>
+</body>
+</html>

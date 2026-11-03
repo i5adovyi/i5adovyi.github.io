@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try the Career Starter onboarding demo. Change a target role, save the draft, and reload the page to see which details the browser restores.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090f">
+  <title>Career Starter · Draft recovery lab · Igor Sadovyi</title>
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./demo.css">
+  <script defer src="./demo.js"></script>
+</head>
+<body class="demo-page">
+  <a class="skip-link" href="#demo">Skip to the form</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="wordmark" href="../" aria-label="Igor Sadovyi — home"><span class="monogram" aria-hidden="true">IS</span><span>Igor Sadovyi</span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="../#proof">Proof</a><a href="../work/career-starter/">Case study</a></nav>
+    </div>
+  </header>
+
+  <main class="container demo-main">
+    <nav class="demo-crumb" aria-label="Breadcrumb"><a href="../#proof">Proof</a><span aria-hidden="true">/</span><a href="../work/career-starter/">Career Starter</a><span aria-hidden="true">/</span><span aria-current="page">Demo</span></nav>
+    <header class="lab-heading">
+      <p class="demo-label">Draft recovery lab</p>
+      <h1 id="project-title">Career Starter</h1>
+      <p>What happens to a saved application when you reload the page? Try it with a fictional candidate and a job title of your choice.</p>
+    </header>
+
+    <section class="workbench" id="demo" aria-label="Sample onboarding form">
+      <header class="bench-bar">
+        <span class="bench-app"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 6.5h2"/></svg> Candidate onboarding</span>
+        <span class="bench-mode">Browser demo</span>
+      </header>
+      <div class="bench-stage">
+        <noscript><p>Enable JavaScript in your browser to try the form.</p></noscript>
+        <div id="draft-interface" hidden>
+          <ol class="demo-progress" aria-label="Onboarding steps">
+            <li id="progress-edit" aria-current="step"><span>01</span> Profile</li>
+            <li id="progress-review"><span>02</span> Review</li>
+          </ol>
+          <div id="edit-panel">
+            <h2 id="edit-title" tabindex="-1">Candidate profile</h2>
+            <p id="role-hint" class="bench-help">Change the sample job title, then save it to move to the review step.</p>
+            <form id="profile-form" novalidate>
+              <label for="role">Target role</label>
+              <input id="role" type="text" maxlength="100" required autocomplete="off" value="QA Engineer" aria-describedby="role-hint">
+              <p id="role-error" class="demo-error" hidden>Enter a target role.</p>
+              <button class="button" type="submit">Save and continue <span aria-hidden="true">→</span></button>
+            </form>
+          </div>
+          <div id="review-panel" hidden>
+            <h2 id="review-title" tabindex="-1">Review draft</h2>
+            <p class="bench-help">Reload the page. This step should reopen with the exact job title you saved.</p>
+            <dl class="saved-field">
+              <dt>Target role</dt>
+              <dd id="saved-role"></dd>
+            </dl>
+            <div class="bench-actions">
+              <button class="button" id="reload" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 11a8 8 0 1 0-2.3 7.1M20 4v7h-7"/></svg> Reload page</button>
+              <button class="button secondary" id="edit" type="button">Edit</button>
+            </div>
+          </div>
+          <p id="draft-status" class="demo-status" role="status"></p>
+        </div>
+      </div>
+      <footer class="bench-foot">
+        <span><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3m-4 0h8"/></svg> Draft stored in this browser only</span>
+        <button id="reset" type="button" hidden>Reset draft</button>
+      </footer>
+    </section>
+
+    <aside class="demo-followup" aria-labelledby="automation-title">
+      <div><h2 id="automation-title">How the test checks recovery</h2><p>Follow the browser test from the first edit to the restored field.</p></div>
+      <a href="../evidence/">View the Playwright test <span aria-hidden="true">→</span></a>
+    </aside>
+  </main>
+</body>
+</html>

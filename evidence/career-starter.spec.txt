@@ -1,0 +1,26 @@
+import { expect, test } from '@playwright/test';
+
+test('Reloading the page restores the review step and the edited target role', async ({ page }) => {
+  const newRole = 'QA Automation Engineer';
+  const role = page.getByRole('textbox', { name: 'Target role' });
+  const review = page.getByRole('heading', { name: 'Review draft' });
+
+  await page.goto('./');
+  await page.getByRole('link', { name: 'Proof', exact: true }).click();
+  const proof = page.getByRole('region', { name: 'Proof', exact: true });
+  await expect(proof.getByRole('heading', { name: 'Proof', exact: true })).toBeInViewport();
+  const project = proof.getByRole('article').filter({
+    has: page.getByRole('heading', { name: 'Career Starter', exact: true }),
+  });
+  await project.getByRole('link', { name: 'Try the demo', exact: true }).click();
+  await expect(role).toHaveValue('QA Engineer');
+  await role.fill(newRole);
+  await page.getByRole('button', { name: 'Save and continue' }).click();
+  await expect(review).toBeVisible();
+
+  await page.reload();
+  await expect(review).toBeVisible();
+  await expect(page.getByRole('definition')).toHaveText(newRole);
+  await page.getByRole('button', { name: 'Edit', exact: true }).click();
+  await expect(role).toHaveValue(newRole);
+});

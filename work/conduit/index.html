@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="A course-based Playwright API test checks that an invalid token cannot delete an article and that the same article can still be read.">
+  <title>Did the article survive? · Conduit API · Igor Sadovyi</title>
+  <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../case.css">
+</head>
+<body class="field-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="wordmark" href="../../" aria-label="Igor Sadovyi — home"><span class="monogram" aria-hidden="true">IS</span><span>Igor Sadovyi</span></a>
+      <nav class="nav-links" aria-label="Portfolio navigation"><a href="../../#projects"><span aria-hidden="true">←</span> Test Automation Projects</a></nav>
+    </div>
+  </header>
+  <main id="main" class="container field-main">
+    <article aria-labelledby="case-title">
+      <header class="field-cover">
+        <div class="cover-copy">
+          <p class="sheet-index"><span>03</span> Engineering field notes</p>
+          <p class="project-name">Conduit API</p>
+          <h1 id="case-title">Did the article survive?</h1>
+          <p class="standfirst">A delete request with an invalid token returns 401. A second request answers the more important question for the author. Is the article still there?</p>
+          <div class="scope"><span>Course-based Playwright suite</span><span>Playwright · API · Authorization</span></div>
+        </div>
+        <figure class="exhibit">
+          <figcaption><span>03A</span> Expected exchange</figcaption>
+          <div class="exchange">
+            <div class="http-operation"><p><b>DELETE</b> <code>articles/{slug}</code></p><div><strong>401</strong><span>Invalid token</span></div></div>
+            <div class="http-operation"><p><b>GET</b> <code>articles/{slug}</code></p><div><strong>200</strong><span>Article found</span></div></div>
+          </div>
+          <p class="figure-foot">The response must contain the <strong>original slug</strong>.</p>
+        </figure>
+      </header>
+      <div class="notes">
+        <section class="field-note">
+          <p class="note-label">The risk</p>
+          <div><h2>An error can hide a deletion</h2><p>The response to an unauthorized request could look correct even if the application deleted the article. An author should still be able to retrieve the original article.</p></div>
+        </section>
+        <section class="field-note">
+          <p class="note-label">The experiment</p>
+          <div><h2>Read the same slug back</h2><p>The test starts with a seeded article. It sends a delete request using an invalid token, expects a 401 with an error, then fetches the article by slug. The read must return 200 and the original slug.</p></div>
+        </section>
+        <section class="field-note">
+          <p class="note-label">The comparison</p>
+          <div><h2>Check what a real deletion looks like</h2><p>The owner’s test expects a 204 after deleting the article. Both the following read and a repeated delete must return 404. The differing read results distinguish a rejected delete from a successful one.</p></div>
+        </section>
+        <div class="source-line">
+          <span class="note-label">Source file</span>
+          <a href="https://github.com/i5adovyi/qa-dojo-conduit-api-ta/blob/378f676a763f32da223b1d1f01122d8aefcd7490/tests/api/article/delete-article.spec.ts#L18-L31"><span><strong>Read the invalid-token test</strong><code>delete-article.spec.ts</code></span><span class="source-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <section class="extra-note"><p class="note-label">Course demo findings</p><div><h2>What the wider run found</h2><p>The November 2, 2026 course demo run exposed separate validation and filtering issues. Creating an article without a title, for example, returned 500 where the course checklist expected 422.</p><a class="text-link" href="https://github.com/i5adovyi/qa-dojo-conduit-api-ta/blob/378f676a763f32da223b1d1f01122d8aefcd7490/documentation/checklist.md#observed-on-the-course-demo">Read the recorded findings <span aria-hidden="true">↗</span></a></div></section>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container"><span>Igor Sadovyi / Senior QA Engineer</span><a href="https://github.com/i5adovyi/qa-dojo-conduit-api-ta">Project repository <span aria-hidden="true">↗</span></a></div></footer>
+</body>
+</html>

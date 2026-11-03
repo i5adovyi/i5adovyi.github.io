@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 620 380" fill="none" role="img" aria-labelledby="signal-title">
+  <title id="signal-title">Signals passing through three glass verification planes converge into one path</title>
+  <defs>
+    <radialGradient id="atmosphere">
+      <stop stop-color="#125a74" stop-opacity=".38"/>
+      <stop offset=".55" stop-color="#09324a" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#07090f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="floor-fade">
+      <stop stop-color="white" stop-opacity=".84"/>
+      <stop offset=".53" stop-color="white" stop-opacity=".52"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="-.1" y1="0" x2="1" y2=".82">
+      <stop stop-color="#328697" stop-opacity=".48"/>
+      <stop offset=".32" stop-color="#102738" stop-opacity=".79"/>
+      <stop offset=".7" stop-color="#183b50" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#3d7088" stop-opacity=".45"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="-43" y1="-82" x2="44" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a4eff7"/>
+      <stop offset=".35" stop-color="#3b829a"/>
+      <stop offset=".75" stop-color="#244558"/>
+      <stop offset="1" stop-color="#68bdd5"/>
+    </linearGradient>
+    <linearGradient id="incoming" x1="20" y1="190" x2="240" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1187ac" stop-opacity="0"/>
+      <stop offset=".24" stop-color="#178bad" stop-opacity=".7"/>
+      <stop offset=".74" stop-color="#1fb6d5"/>
+      <stop offset="1" stop-color="#99f8ff"/>
+    </linearGradient>
+    <linearGradient id="outgoing" x1="424" y1="158" x2="601" y2="115" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e4ffff"/>
+      <stop offset=".55" stop-color="#60ecfa"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="floor-grid" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="matrix(1 -.38 1 .38 0 296)">
+      <path d="M28 0H0V28" stroke="#335064" stroke-width=".95"/>
+    </pattern>
+    <mask id="ground" maskUnits="userSpaceOnUse" x="0" y="150" width="620" height="215">
+      <ellipse cx="322" cy="274" rx="285" ry="78" fill="url(#floor-fade)"/>
+    </mask>
+    <g id="gate" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-41-61 33-101 38-99 38 66-37 107-42 104Z" fill="#0b1b28" stroke="#305064"/>
+      <path d="M-42-64Q-42-67-39-69L30-106Q34-108 34-103V62Q34 65 31 67L-37 105Q-42 108-42 102Z" fill="url(#glass)" stroke="url(#rim)" stroke-width="1.35"/>
+      <path d="m-36-63 64-35v160l-64 35Z" stroke="#6ccfe0" stroke-opacity=".25" stroke-width=".8"/>
+      <path d="m-32-57 20-11m22-12 14-8m-56 174 13-7m27-15 16-9" stroke="#7acee0" stroke-opacity=".47" stroke-width=".8"/>
+      <path d="m-37-55 0-7 10-6m55 124v6l-9 5" stroke="#a2eff5" stroke-opacity=".82"/>
+      <path d="m-28-38 5-3m-5 13 10-5m-10 15 5-3m-5 13 5-3m-5 13 10-5m-10 15 5-3" stroke="#8cb5c5" stroke-opacity=".52" stroke-width=".85"/>
+      <g transform="matrix(1 -.54 0 1 0 0)">
+        <ellipse rx="21" ry="31" fill="#071a25" fill-opacity=".73" stroke="#4990a8" stroke-width="1"/>
+        <ellipse rx="16.4" ry="25.5" stroke="#7bd8e7" stroke-opacity=".4" stroke-width=".9" stroke-dasharray="30 6 5 5"/>
+        <ellipse rx="9.5" ry="17.8" stroke="#60dcef" stroke-opacity=".68" stroke-width=".85"/>
+      </g>
+      <path d="m-42-64 10-5.5m66-18v-15m-76 187v12" stroke="#cbf6ff" stroke-opacity=".7" stroke-width="1.6"/>
+      <path d="m-30 78 3-1.7m3-1.7 3-1.7m3-1.7 3-1.7" stroke="#59b9d4" stroke-opacity=".7" stroke-width="1.5"/>
+    </g>
+    <g id="filaments" stroke-linecap="round">
+      <path d="M18 156C66 123 105 119 138 137S196 188 238 192"/>
+      <path d="M10 170C74 145 109 145 145 157S200 190 238 195"/>
+      <path d="M10 192C70 170 111 172 148 176S204 195 238 198"/>
+      <path d="M6 213C77 202 111 195 146 192S198 193 238 200"/>
+      <path d="M12 232C75 233 106 223 143 210S207 198 238 202"/>
+      <path d="M21 249C70 265 112 246 146 228S196 205 238 204"/>
+      <path d="M33 269C94 294 135 266 163 244S207 211 238 207"/>
+    </g>
+    <path id="exit" d="M425 154C470 152 482 128 520 121S575 120 611 98"/>
+  </defs>
+  <ellipse cx="326" cy="188" rx="286" ry="174" fill="url(#atmosphere)"/>
+  <rect x="0" y="150" width="620" height="215" fill="url(#floor-grid)" mask="url(#ground)"/>
+  <g stroke="#4b7d8d" stroke-opacity=".35" stroke-dasharray="2 6">
+    <path d="M196 296v24m76-56v26m20-16v24m76-58v30m21-51v30m75-65v37"/>
+  </g>
+  <g stroke="#48788e" stroke-linecap="round" stroke-opacity=".55">
+    <path d="m178 322 104-40m-26-24 106-39m-16-16 113-42" transform="translate(0 12)" stroke-dasharray="2 5 14 5"/>
+  </g>
+  <use xlink:href="#gate" transform="translate(430 154) scale(.86)" opacity=".82"/>
+  <use xlink:href="#gate" transform="translate(338 178) scale(.95)"/>
+  <use xlink:href="#gate" transform="translate(238 200)"/>
+  <g stroke="url(#incoming)">
+    <use xlink:href="#filaments" stroke-width="4.5" opacity=".085"/>
+    <use xlink:href="#filaments" stroke-width="1.55"/>
+  </g>
+  <g stroke-linecap="round">
+    <path d="M238 197C276 201 292 175 338 174M238 200C274 206 302 179 338 178M238 203C282 212 300 185 338 182" stroke="#65d8ef" stroke-opacity=".8" stroke-width="1.35"/>
+    <path d="M338 176C371 178 398 151 428 153M338 180C372 184 400 153 428 155" stroke="#70e5f4" stroke-width="1.3"/>
+    <use xlink:href="#exit" stroke="url(#outgoing)" stroke-width="11" opacity=".065"/>
+    <use xlink:href="#exit" stroke="url(#outgoing)" stroke-width="5" opacity=".18"/>
+    <use xlink:href="#exit" stroke="url(#outgoing)" stroke-width="2.2"/>
+  </g>
+  <g fill="#b7faff">
+    <circle cx="238" cy="200" r="2.5"/><circle cx="338" cy="178" r="2.5"/><circle cx="430" cy="154" r="3.1"/>
+  </g>
+  <g fill="#22d3ee" opacity=".12">
+    <circle cx="238" cy="200" r="8"/><circle cx="338" cy="178" r="7"/><circle cx="430" cy="154" r="9"/>
+  </g>
+</svg>

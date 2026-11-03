@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="Igor Sadovyi on tracing a missing ingredient list from a package photo to a saved product record and making the source visible to reviewers.">
+  <title>The missing ingredient list · Igor Sadovyi</title>
+  <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../case.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="wordmark" href="../../" aria-label="Igor Sadovyi — home"><span class="monogram" aria-hidden="true">IS</span><span>Igor Sadovyi</span></a>
+      <nav class="nav-links" aria-label="Portfolio navigation">
+        <a href="../../#experience">Experience</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container story">
+    <article aria-labelledby="title">
+      <header class="story-intro">
+        <a class="back-link" href="../../#experience"><span aria-hidden="true">←</span> Back to experience</a>
+        <p class="eyebrow">Professional experience / GenAI evaluation</p>
+        <h1 id="title">The missing ingredient list</h1>
+        <p class="lede">The system could read the ingredients on a package and still approve a product whose saved record had lost them. I followed the text from the original photo to the record a reviewer had to judge.</p>
+      </header>
+      <figure class="evidence-map">
+        <figcaption><span class="eyebrow">Fig. 01</span> Where the evidence went missing</figcaption>
+        <img src="../../assets/ingredient-trace.svg" alt="" width="600" height="204">
+        <ol class="evidence-stages">
+          <li><span>01 / Package photo</span><strong>Ingredients visible</strong></li>
+          <li><span>02 / Extraction</span><strong>Text recognized</strong></li>
+          <li><span>03 / Saved record</span><strong>Ingredient text missing</strong></li>
+        </ol>
+      </figure>
+      <div class="story-layout">
+        <div class="chapters">
+          <section>
+            <p class="eyebrow">01 / Investigation</p>
+            <h2>What survived the save?</h2>
+            <p>I compared saved product records with the original package photos. In one case, the system had extracted the ingredient list, but the text was gone by the time it saved the record. Approval was still possible.</p>
+            <p>That comparison also exposed errors in the expected answers. When a photo showed that a test expectation was wrong, I corrected it and versioned the change with the test data.</p>
+          </section>
+          <section>
+            <p class="eyebrow">02 / My contribution</p>
+            <h2>Keeping the source with the field</h2>
+            <p>I traced the missing text into the product code. I contributed backend changes that preserved the evidence for extracted fields and UI changes that showed reviewers where each value came from.</p>
+          </section>
+          <section>
+            <p class="eyebrow">03 / Outcome</p>
+            <h2>What changed for reviewers</h2>
+            <p>Reviewers could now see the source behind an extracted value when deciding whether the evidence supported it. When there wasn’t enough evidence to justify approval, I recommended sending the item for human review.</p>
+          </section>
+        </div>
+        <aside class="case-brief" aria-labelledby="brief-title">
+          <h2 id="brief-title">At a glance</h2>
+          <dl>
+            <div><dt>Role</dt><dd>Senior QA Engineer</dd></div>
+            <div><dt>Context</dt><dd>Product data extracted from packaging photos</dd></div>
+            <div><dt>My work</dt><dd>Evaluation, backend evidence and reviewer UI</dd></div>
+          </dl>
+          <a class="text-link" href="https://github.com/i5adovyi/i5adovyi/blob/4b219522387d248d7bf6a20ca54f4336b1a905b6/README.md#ai-quality-and-product-engineering">Original case notes <span aria-hidden="true">↗</span></a>
+        </aside>
+      </div>
+      <footer class="story-footer">
+        <a class="text-link" href="../../#experience"><span aria-hidden="true">←</span> All experience</a>
+        <a class="text-link" href="../../work/career-starter/">Related case · CV approval <span aria-hidden="true">→</span></a>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container"><span>Igor Sadovyi · Senior QA Engineer</span><a href="https://github.com/i5adovyi/i5adovyi/blob/main/README.md">My GitHub profile <span aria-hidden="true">↗</span></a></div>
+  </footer>
+</body>
+</html>

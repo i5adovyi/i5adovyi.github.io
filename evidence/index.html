@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-report-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="Follow the Playwright test for Career Starter draft recovery. Read the browser assertions, inspect the executable source, and see how a lost edit was detected.">
+  <title>Draft recovery test · Igor Sadovyi</title>
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./evidence.css">
+  <script src="./source.js" defer></script>
+</head>
+<body class="evidence-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="wordmark" href="../" aria-label="Igor Sadovyi — home"><span class="monogram" aria-hidden="true">IS</span><span>Igor Sadovyi</span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="../#proof">Proof</a><a href="../career-starter/">Demo</a></nav>
+    </div>
+  </header>
+  <main class="container evidence-main" id="main">
+    <nav class="test-crumb" aria-label="Breadcrumb"><a href="../#proof">Proof</a><span aria-hidden="true">/</span><a href="../work/career-starter/">Career Starter</a><span aria-hidden="true">/</span><span aria-current="page">Test evidence</span></nav>
+
+    <header class="test-heading">
+      <p class="test-label">Playwright walkthrough</p>
+      <h1>Testing draft recovery</h1>
+      <p>A form can reopen on the right step and still lose the last edit. This browser test checks both the step and the exact value the candidate entered.</p>
+    </header>
+
+    <section class="walkthrough" aria-label="Test walkthrough and source">
+      <section class="test-checks" aria-labelledby="checks-title">
+        <h2 id="checks-title">What the test checks</h2>
+        <ol>
+          <li><span class="check-index" aria-hidden="true">01</span><div><h3>Change the role</h3><p>The sample starts with <strong>QA Engineer</strong>. The test enters <strong>QA Automation Engineer</strong>, saves the draft, and waits for the review step.</p></div></li>
+          <li><span class="check-index" aria-hidden="true">02</span><div><h3>Reload the page</h3><p>After a real reload, the <strong>Review draft</strong> heading must be visible and the summary must show the new role.</p></div></li>
+          <li><span class="check-index" aria-hidden="true">03</span><div><h3>Return to the field</h3><p>The test selects <strong>Edit</strong> and checks the textbox itself. The candidate can continue with the saved value.</p></div></li>
+        </ol>
+        <a class="demo-return" href="../career-starter/">Try the demo <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section class="spec-panel" aria-labelledby="spec-title">
+        <div class="spec-toolbar">
+          <h2 id="spec-title"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-15-4 20"/></svg> career-starter.spec.js</h2>
+          <a href="./career-starter.spec.txt">Open source file <span aria-hidden="true">↗</span></a>
+        </div>
+        <pre tabindex="0" aria-label="Playwright test source"><code id="spec-source">Use “Open source file” to read the test.</code></pre>
+      </section>
+    </section>
+
+    <section class="report-panel" aria-labelledby="report-title">
+      <div>
+        <h2 id="report-title">Run report and trace</h2>
+        <p class="report-available">Open the test in the report and select “View Trace” to inspect the form at each step.</p>
+        <p class="report-pending">The local report appears after <code>npm test</code> passes.</p>
+      </div>
+      <a class="button report-available" href="./report/">Open Playwright report <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <details class="regression-note" open>
+      <summary>Would this test catch a lost edit?</summary>
+      <div class="mutation-result">
+        <p>I introduced a bug in a separate copy of the demo. After a reload, the form opened on the right step but displayed the original role. The heading check passed. The next assertion caught the lost edit.</p>
+        <pre aria-label="Assertion difference"><code>Expected: "QA Automation Engineer"
+Received: "QA Engineer"</code></pre>
+      </div>
+    </details>
+  </main>
+</body>
+</html>

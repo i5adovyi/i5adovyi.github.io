@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 204" fill="none" role="img" aria-labelledby="trace-title trace-description">
+  <title id="trace-title">From a package label to a missing field</title>
+  <desc id="trace-description">A package carries three lines of ingredient text. The lines appear in the extraction panel, but the corresponding field in the saved record is empty.</desc>
+  <defs>
+    <linearGradient id="package" x1="44" y1="63" x2="149" y2="155" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22465a"/>
+      <stop offset="1" stop-color="#102230"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="240" y1="46" x2="360" y2="156" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172936"/>
+      <stop offset="1" stop-color="#0d141d"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#4f6578" stroke-width="2">
+      <path d="M164 101h46m-7-6 7 6-7 6"/>
+      <path d="M382 101h41m-7-6 7 6-7 6"/>
+    </g>
+    <g stroke-width="2.5">
+      <path d="m49 49 81-12 17 9-81 14Z" fill="#2d4d5e" stroke="#8197a6"/>
+      <path d="m49 49 17 11v108l-17-15Z" fill="#142735" stroke="#688192"/>
+      <path d="m66 60 81-14v106l-81 16Z" fill="url(#package)" stroke="#a4b6c2"/>
+      <path d="m79 78 55-10v58l-55 10Z" fill="#0d1c26" stroke="#7195a6"/>
+      <path d="m87 90 27-5" stroke="#a6becb" stroke-width="4"/>
+      <path d="m87 103 39-7m-39 17 33-6m-33 16 23-4" stroke="#67e8f9" stroke-width="3"/>
+    </g>
+    <g stroke-width="2.5">
+      <rect x="232" y="45" width="135" height="113" rx="10" fill="url(#panel)" stroke="#8a9dac"/>
+      <path d="M233 68h133" stroke="#546c7c"/>
+      <circle cx="245" cy="57" r="2.5" fill="#67e8f9"/>
+      <circle cx="255" cy="57" r="2.5" fill="#7e92a2"/>
+      <path d="M251 96v-9h9m78 0h9v9m0 34v9h-9m-78 0h-9v-9" stroke="#5d91a3"/>
+      <path d="M265 101h68m-68 12h55m-55 12h38" stroke="#67e8f9" stroke-width="4"/>
+    </g>
+    <g stroke-width="2.5">
+      <path d="M447 45h84l24 24v83a6 6 0 0 1-6 6H447a6 6 0 0 1-6-6V51a6 6 0 0 1 6-6Z" fill="url(#panel)" stroke="#8a9dac"/>
+      <path d="M531 46v23h23" stroke="#8a9dac"/>
+      <path d="M457 72h35m-35 13h52" stroke="#8a9dac" stroke-width="3"/>
+      <rect x="456" y="101" width="84" height="34" rx="4" stroke="#67e8f9" stroke-dasharray="5 6"/>
+    </g>
+  </g>
+</svg>
