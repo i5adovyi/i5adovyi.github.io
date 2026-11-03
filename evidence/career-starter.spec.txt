@@ -13,6 +13,7 @@ test('Reloading the page restores the review step and the edited target role', a
     has: page.getByRole('heading', { name: 'Career Starter', exact: true }),
   });
   await project.getByRole('link', { name: 'Try the demo', exact: true }).click();
+  await expect(page).toHaveURL(/\/work\/career-starter\/demo\/$/);
   await expect(role).toHaveValue('QA Engineer');
   await role.fill(newRole);
   await page.getByRole('button', { name: 'Save and continue' }).click();
